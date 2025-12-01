@@ -2,7 +2,7 @@ package main
 
 import (
 	"net/http"
-	"github.com/russross/blackfriday"
+	_"github.com/russross/blackfriday"
 )
 
 
@@ -17,7 +17,7 @@ func main() {
 
 
 func GenerateMarkdown(w http.ResponseWriter, r *http.Request) {
-	markdown := blackfriday.MarkdownCommon([]byte(r.FormValue("body")))	
+	// markdown := blackfriday.MarkdownCommon([]byte(r.FormValue("body")))	
 	w.Write([]byte(r.URL.Query().Get("q")))
-	w.Write(markdown)
+	// w.Write(markdown)
 }
